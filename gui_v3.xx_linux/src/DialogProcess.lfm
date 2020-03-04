@@ -1,0 +1,421 @@
+object DialogProcess1: TDialogProcess1
+  Left = 581
+  Top = 222
+  HelpContext = 290
+  BorderStyle = bsDialog
+  Caption = 'Режим работы'
+  ClientHeight = 178
+  ClientWidth = 313
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  OnActivate = FormActivate
+  OnClose = FormClose
+  PixelsPerInch = 96
+  object Panel5: TPanel
+    Left = 0
+    Top = 33
+    Width = 313
+    Height = 145
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 4
+    object Bevel5: TBevel
+      Left = 6
+      Top = 6
+      Width = 297
+      Height = 97
+      Shape = bsFrame
+    end
+    object Label5_1: TLabel
+      Left = 70
+      Top = 22
+      Width = 217
+      Height = 57
+      AutoSize = False
+      Caption = 'Lock bits'
+      WordWrap = True
+    end
+    object Label5_2: TLabel
+      Left = 70
+      Top = 78
+      Width = 109
+      Height = 13
+      Caption = 'Установить  защиту?'
+    end
+    object Image2: TImage
+      Left = 22
+      Top = 22
+      Width = 32
+      Height = 32
+      AutoSize = True
+      Picture.Data = {
+        055449636F6E0000010001002020040000000000E80200001600000028000000
+        2000000040000000010004000000000000020000000000000000000000000000
+        0000000000000000000080000080000000808000800000008000800080800000
+        C0C0C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000
+        FFFFFF0000000888888888888888888888888800000088888888888888888888
+        888888800030000000000000000000000008888803BBBBBBBBBBBBBBBBBBBBBB
+        BB7088883BBBBBBBBBBBBBBBBBBBBBBBBBB708883BBBBBBBBBBBBBBBBBBBBBBB
+        BBBB08883BBBBBBBBBBBB7007BBBBBBBBBBB08803BBBBBBBBBBBB0000BBBBBBB
+        BBB7088003BBBBBBBBBBB0000BBBBBBBBBB0880003BBBBBBBBBBB7007BBBBBBB
+        BB708800003BBBBBBBBBBBBBBBBBBBBBBB088000003BBBBBBBBBBB0BBBBBBBBB
+        B70880000003BBBBBBBBB707BBBBBBBBB08800000003BBBBBBBBB303BBBBBBBB
+        7088000000003BBBBBBBB000BBBBBBBB0880000000003BBBBBBB70007BBBBBB7
+        08800000000003BBBBBB30003BBBBBB088000000000003BBBBBB00000BBBBB70
+        880000000000003BBBBB00000BBBBB08800000000000003BBBBB00000BBBB708
+        8000000000000003BBBB00000BBBB0880000000000000003BBBB00000BBB7088
+        00000000000000003BBB70007BBB088000000000000000003BBBBBBBBBB70880
+        000000000000000003BBBBBBBBB08800000000000000000003BBBBBBBB708800
+        0000000000000000003BBBBBBB0880000000000000000000003BBBBBB7088000
+        00000000000000000003BBBBB088000000000000000000000003BBBB70800000
+        000000000000000000003BB70000000000000000000000000000033300000000
+        00000000F8000003F0000001C000000080000000000000000000000000000001
+        000000018000000380000003C0000007C0000007E000000FE000000FF000001F
+        F000001FF800003FF800003FFC00007FFC00007FFE0000FFFE0000FFFF0001FF
+        FF0001FFFF8003FFFF8003FFFFC007FFFFC007FFFFE00FFFFFE01FFFFFF07FFF
+        FFF8FFFF
+      }
+    end
+    object Button5_No: TButton
+      Left = 165
+      Top = 109
+      Width = 75
+      Height = 25
+      Cancel = True
+      Caption = 'Нет'
+      ModalResult = 2
+      TabOrder = 0
+    end
+    object Button5_Ok: TButton
+      Left = 69
+      Top = 109
+      Width = 75
+      Height = 25
+      Caption = 'Да'
+      Default = True
+      TabOrder = 1
+      OnClick = Button2_OkClick
+    end
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 33
+    Width = 313
+    Height = 145
+    HelpContext = 310
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 2
+    object Bevel3: TBevel
+      Left = 6
+      Top = 6
+      Width = 297
+      Height = 97
+      Shape = bsFrame
+    end
+    object LabelMode: TLabel
+      Left = 22
+      Top = 54
+      Width = 52
+      Height = 13
+      Caption = 'Записано:'
+    end
+    object ProgressBar1: TProgressBar
+      Left = 94
+      Top = 54
+      Width = 193
+      Height = 17
+      Position = 0
+      Visible = False
+    end
+    object LabelStatus: TLabel
+      Left = 22
+      Top = 78
+      Width = 265
+      Height = 13
+      AutoSize = False
+      Caption = 'Число ошибок - контрольная сумма'
+    end
+    object Label2: TLabel
+      Left = 22
+      Top = 22
+      Width = 60
+      Height = 13
+      Caption = 'Имя файла:'
+    end
+    object RepeatBtn: TButton
+      Left = 6
+      Top = 110
+      Width = 225
+      Height = 25
+      Caption = 'Повторить для следующей микросхемы'
+      Default = True
+      TabOrder = 0
+      OnClick = RepeatBtnClick
+    end
+    object CloseBtn: TButton
+      Left = 238
+      Top = 110
+      Width = 65
+      Height = 25
+      Cancel = True
+      Caption = 'Закрыть'
+      ModalResult = 1
+      TabOrder = 1
+    end
+    object stFileName: TStaticText
+      Left = 94
+      Top = 22
+      Width = 193
+      Height = 17
+      HelpContext = 320
+      AutoSize = False
+      BorderStyle = sbsSunken
+      Caption = 'Нет файла'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 2
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 33
+    Width = 313
+    Height = 145
+    HelpContext = 330
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 1
+    object Bevel2: TBevel
+      Left = 6
+      Top = 6
+      Width = 297
+      Height = 97
+      Shape = bsFrame
+    end
+    object Button2_Ok: TButton
+      Left = 69
+      Top = 109
+      Width = 75
+      Height = 25
+      Caption = 'OK'
+      Default = True
+      TabOrder = 5
+      OnClick = Button2_OkClick
+    end
+    object CanselBtn: TButton
+      Left = 165
+      Top = 109
+      Width = 75
+      Height = 25
+      Cancel = True
+      Caption = 'Отмена'
+      ModalResult = 2
+      TabOrder = 6
+    end
+    object cbNewFile: TCheckBox
+      Left = 22
+      Top = 14
+      Width = 209
+      Height = 17
+      Hint = 'Разрешает загрузку нового файла в программатор, по указанному адресу'
+      HelpContext = 340
+      Caption = 'Загрузить новый файл с адреса:'
+      TabOrder = 0
+      OnClick = cbNewFileClick
+    end
+    object cbWrite: TCheckBox
+      Left = 22
+      Top = 58
+      Width = 269
+      Height = 17
+      HelpContext = 350
+      Caption = 'Специальный режим записи'
+      TabOrder = 3
+    end
+    object cbLock: TCheckBox
+      Left = 22
+      Top = 78
+      Width = 269
+      Height = 17
+      Hint = 'Разрешает автоматическую запись защиты после программирования микросхемы'
+      HelpContext = 360
+      Caption = 'Установка битов защиты памяти программ'
+      TabOrder = 4
+    end
+    object edLoadAdres: TEdit
+      Left = 238
+      Top = 11
+      Width = 49
+      Height = 22
+      Hint = 'Адрес в ОЗУ программатора, по которому будет загружен новый БИНАРНЫЙ файл'
+      HelpContext = 370
+      AutoSize = False
+      CharCase = ecUpperCase
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -12
+      Font.Name = 'Courier New'
+      Font.Style = []
+      MaxLength = 6
+      ParentFont = False
+      TabOrder = 1
+      Text = '000000'
+      OnKeyPress = edLoadAdresKeyPress
+    end
+    object cbSerial: TCheckBox
+      Left = 22
+      Top = 38
+      Width = 209
+      Height = 17
+      Hint = 'Разрешает запись серийного номера по заданному адресу'
+      HelpContext = 380
+      Caption = 'ID Location'
+      TabOrder = 2
+    end
+  end
+  object Panel4: TPanel
+    Left = 0
+    Top = 33
+    Width = 313
+    Height = 145
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 3
+    object Bevel4: TBevel
+      Left = 6
+      Top = 6
+      Width = 297
+      Height = 97
+      Shape = bsFrame
+    end
+    object Label4_1: TLabel
+      Left = 70
+      Top = 22
+      Width = 217
+      Height = 41
+      AutoSize = False
+      Caption = 'Все  данные,  находящиеся  в  микросхеме,  будут  уничтожены.'
+      WordWrap = True
+    end
+    object Label4_2: TLabel
+      Left = 70
+      Top = 70
+      Width = 166
+      Height = 13
+      Caption = 'Начать  стирание  микросхемы?'
+    end
+    object Image1: TImage
+      Left = 22
+      Top = 22
+      Width = 32
+      Height = 32
+      AutoSize = True
+      Picture.Data = {
+        055449636F6E0000010001002020040000000000E80200001600000028000000
+        2000000040000000010004000000000000020000000000000000000000000000
+        0000000000000000000080000080000000808000800000008000800080800000
+        C0C0C000808080000000FF0000FF000000FFFF00FF000000FF00FF00FFFF0000
+        FFFFFF0000000000000000000008800000000000000000000000000000888000
+        000000000000000000000000000880000000000000000000000000000B088000
+        000000000000000000000000BB08800000000000000000000000080BBB088000
+        00000000000000000088880BBB08888800000000000000008880007BBB088888
+        88000000000000080007BBBBBB70008888800000000000007BBBBBBBBBBBB700
+        888800000000007BBBBBBBBBBBBBBBB70888800000000BBBBBBBBBBBBBBBBBBB
+        B08888000000BBBBBBBBB7CC7BBBBBBBBB088880008BBBBBBBBBBCCCCBBBBBBB
+        BBB08880087BBBBBBBBBBCCCCBBBBBBBBBB7088808BBBBBBBBBBB7CC7BBBBBBB
+        BBBB088887BBBBBBBBBBBBBBBBBBBBBBBBBB70888BBBBBBBBBBBBBCCBBBBBBBB
+        BBBBB0888BBBBBBBBBBBBBCC7BBBBBBBBBBBB0888BBBBBBBBBBBBBCCCBBBBBBB
+        BBBBB0888BBBBBBBBBBBBB7CCCBBBBBBBBBBB0888BBBBBBBBB7CC7BCCCCBBBBB
+        BBBBB08087BBBBBBBBCCCCB7CCCCBBBBBBBB708008BBBBBBBBCCCCBBCCCCBBBB
+        BBBB0800087BBBBBBBCCBBBBCCCCBBBBBBB70000008BBBBBBB7C7BBCCCC7BBBB
+        BBB000000008BBBBBBB7CCCCCC7BBBBBBB00000000008BBBBBBBBBBBBBBBBBBB
+        B00000000000087BBBBBBBBBBBBBBBB780000000000000887BBBBBBBBBBBB788
+        00000000000000008887BBBBBB78880000000000000000000008888888800000
+        00000000FFFFE7FFFFFFC7FFFFFF87FFFFFF07FFFFFE07FFFFF807FFFFC000FF
+        FF00003FFE00001FFC00000FF8000007F0000003E0000001C000000180000000
+        8000000000000000000000000000000000000000000000000000000100000001
+        8000000380000007C000000FE000001FF000003FF800007FFC0000FFFF0003FF
+        FFE01FFF
+      }
+    end
+    object Button4_No: TButton
+      Left = 165
+      Top = 109
+      Width = 75
+      Height = 25
+      Cancel = True
+      Caption = 'Нет'
+      ModalResult = 2
+      TabOrder = 0
+    end
+    object Button4_Ok: TButton
+      Left = 69
+      Top = 109
+      Width = 75
+      Height = 25
+      Caption = 'Да'
+      Default = True
+      TabOrder = 1
+      OnClick = Button2_OkClick
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 313
+    Height = 33
+    HelpContext = 390
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 6
+      Top = 9
+      Width = 67
+      Height = 13
+      Caption = 'Микросхема:'
+    end
+    object lbChipName: TLabel
+      Left = 86
+      Top = 3
+      Width = 102
+      Height = 22
+      Caption = 'lbChipName'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object cbAuto: TCheckBox
+      Left = 206
+      Top = 6
+      Width = 97
+      Height = 17
+      Hint = 'Включение режима автоматического выбора микросхем'
+      HelpContext = 410
+      Caption = 'Режим ''AUTO'''
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+  end
+end

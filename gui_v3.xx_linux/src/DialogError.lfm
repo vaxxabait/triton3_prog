@@ -1,0 +1,120 @@
+object DialogError1: TDialogError1
+  Left = 402
+  Top = 153
+  HelpContext = 280
+  BorderStyle = bsDialog
+  Caption = 'Ошибка'
+  ClientHeight = 153
+  ClientWidth = 313
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  OnActivate = FormActivate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 313
+    Height = 153
+    HelpContext = 510
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    TabOrder = 0
+    object Bevel1: TBevel
+      Left = 6
+      Top = 30
+      Width = 297
+      Height = 81
+      Shape = bsFrame
+    end
+    object Label1: TLabel
+      Left = 14
+      Top = 9
+      Width = 67
+      Height = 13
+      Caption = 'Микросхема:'
+    end
+    object lbChipName: TLabel
+      Left = 94
+      Top = 3
+      Width = 102
+      Height = 22
+      Caption = 'lbChipName'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Times New Roman'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object ErrorType: TLabel
+      Left = 22
+      Top = 38
+      Width = 265
+      Height = 13
+      AutoSize = False
+      Caption = 'ErrorType'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object Error: TLabel
+      Left = 22
+      Top = 62
+      Width = 273
+      Height = 16
+      AutoSize = False
+      Caption = 'Error'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'MS Sans Serif'
+      Font.Style = [fsBold]
+      ParentFont = False
+    end
+    object ErrorText: TLabel
+      Left = 22
+      Top = 86
+      Width = 265
+      Height = 13
+      AutoSize = False
+      Caption = 'ErrorText'
+    end
+    object RetryBtn: TButton
+      Left = 5
+      Top = 118
+      Width = 90
+      Height = 25
+      Caption = 'Пропустить'
+      Default = True
+      ModalResult = 4
+      TabOrder = 0
+    end
+    object AbortBtn: TButton
+      Left = 213
+      Top = 118
+      Width = 90
+      Height = 25
+      Cancel = True
+      Caption = 'Отмена'
+      ModalResult = 3
+      TabOrder = 1
+    end
+    object IgnoreBtn: TButton
+      Left = 110
+      Top = 118
+      Width = 90
+      Height = 25
+      Caption = 'Пропустить все'
+      ModalResult = 5
+      TabOrder = 2
+    end
+  end
+end

@@ -1,0 +1,94 @@
+object SelectDlg: TSelectDlg
+  Left = 241
+  Top = 149
+  BorderStyle = bsDialog
+  Caption = 'Выделить...'
+  ClientHeight = 120
+  ClientWidth = 320
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Position = poScreenCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RadioGroup1: TRadioGroup
+    Left = 8
+    Top = 3
+    Width = 217
+    Height = 110
+    ItemIndex = 0
+    Items.Strings = (
+      'Весь ф&айл  ( 0...'
+      '&Первую половину'
+      '&Вторую половину'
+      '&Фрагмент'
+    )
+    TabOrder = 0
+    OnClick = RadioGroup1Click
+  end
+  object OKBtn: TButton
+    Left = 232
+    Top = 56
+    Width = 81
+    Height = 25
+    Caption = 'OK'
+    Default = True
+    ModalResult = 1
+    TabOrder = 3
+    OnClick = OKBtnClick
+  end
+  object CancelBtn: TButton
+    Left = 232
+    Top = 88
+    Width = 81
+    Height = 25
+    Cancel = True
+    Caption = 'Cancel'
+    ModalResult = 2
+    TabOrder = 4
+  end
+  object MaskEditFinal: TMaskEdit
+    Left = 165
+    Top = 82
+    Width = 53
+    Height = 25
+    Hint = 'Конечный адрес блока'
+    AutoSize = False
+    CharCase = ecUpperCase
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Courier New'
+    Font.Style = []
+    MaxLength = 6
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 2
+    OnClick = MaskEditClick
+    OnKeyPress = MaskEditKeyPress
+  end
+  object MaskEditBegin: TMaskEdit
+    Left = 101
+    Top = 82
+    Width = 53
+    Height = 25
+    Hint = 'Начальный адрес блока'
+    AutoSize = False
+    CharCase = ecUpperCase
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clBlack
+    Font.Height = -12
+    Font.Name = 'Courier New'
+    Font.Style = []
+    MaxLength = 6
+    ParentFont = False
+    ParentShowHint = False
+    ShowHint = False
+    TabOrder = 1
+    OnClick = MaskEditClick
+    OnKeyPress = MaskEditKeyPress
+  end
+end

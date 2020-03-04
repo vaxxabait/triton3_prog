@@ -1,0 +1,88 @@
+object TextEdit: TTextEdit
+  Left = 345
+  Top = 84
+  Width = 544
+  Height = 382
+  Caption = 'Text Editor'
+  Font.Charset = RUSSIAN_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Courier New'
+  Font.Style = []
+  FormStyle = fsMDIChild
+  Menu = MainMenu1
+  Position = poDefault
+  Visible = True
+  OnClose = FormClose
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 536
+    Height = 336
+    Align = alClient
+    BevelInner = bvLowered
+    BevelOuter = bvLowered
+    BorderWidth = 2
+    TabOrder = 0
+    object RichEdit: TMemo
+      Left = 2
+      Top = 2
+      Width = 528
+      Height = 328
+      Align = alClient
+      BorderStyle = bsNone
+      ReadOnly = True
+      ScrollBars = ssBoth
+      TabOrder = 0
+      WordWrap = False
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 16
+    Top = 16
+    object EditMenu: TMenuItem
+      Caption = '&Правка'
+      GroupIndex = 20
+      Hint = 'Команды встроенного редактора'
+      object EditFindItem: TMenuItem
+        Caption = 'По&иск строки...'
+        Hint = 'Вывод окна для поиска данных'
+        ShortCut = 16454
+        OnClick = EditFindItemClick
+      end
+      object EditNextFindItem: TMenuItem
+        Caption = '&Следующий поиск'
+        Hint = 'Продолжение поиска с позиции курсора'
+        ShortCut = 114
+        OnClick = EditNextFindItemClick
+      end
+      object N1: TMenuItem
+        Caption = '-'
+      end
+      object EditFont: TMenuItem
+        Caption = '&Шрифт...'
+        Hint = 'Вывод окна для выбора шрифта'
+        OnClick = EditFontClick
+      end
+    end
+  end
+  object FontDialog: TFontDialog
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Courier New'
+    Font.Style = []
+    MinFontSize = 0
+    MaxFontSize = 0
+    Options = [fdFixedPitchOnly, fdForceFontExist]
+    Left = 112
+    Top = 16
+  end
+  object PrintDialog1: TPrintDialog
+    Options = [poPageNums, poSelection]
+    Left = 80
+    Top = 16
+  end
+end
